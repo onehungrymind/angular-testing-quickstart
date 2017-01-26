@@ -1,0 +1,36 @@
+{
+  "items": [
+    {
+      "id": 1,
+      "name": "Item 1",
+      "description": "This is a description"
+    },
+    {
+      "id": 2,
+      "name": "Item 2",
+      "description": "This is a description!"
+    },
+    {
+      "id": 3,
+      "name": "Item 3",
+      "description": "This is a lovely item"
+    }
+  ],
+  "widgets": [
+    {
+      "id": 1,
+      "name": "Widget 1",
+      "description": "This is a description"
+    },
+    {
+      "id": 2,
+      "name": "Widget 2",
+      "description": "This is a description edited!"
+    },
+    {
+      "id": 3,
+      "name": "Widget 3",
+      "description": "This is a lovely widget ;)"
+    }
+  ]
+}
