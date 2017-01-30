@@ -1,5 +1,5 @@
 /* tslint:disable:no-unused-variable */
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
@@ -8,21 +8,25 @@ import { SimpleComponent } from './simple.component';
 describe('SimpleComponent', () => {
   let component: SimpleComponent;
   let fixture: ComponentFixture<SimpleComponent>;
-
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ SimpleComponent ]
-    })
-    .compileComponents();
-  }));
+  let de: DebugElement;
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(SimpleComponent);
+    fixture = TestBed.configureTestingModule({
+      declarations: [ SimpleComponent ]
+    })
+    .createComponent(SimpleComponent);
+
     component = fixture.componentInstance;
+    de = fixture.debugElement;
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  it('sets the `subject` class member', () => {
+    expect(component.subject).toBe('world');
+  });
+
+  it('greets the subject', () => {
+    const h1 = de.query(By.css('h1'));
+    expect(h1.nativeElement.innerText).toBe('Hello world!');
   });
 });

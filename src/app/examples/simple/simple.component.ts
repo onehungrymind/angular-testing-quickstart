@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./simple.component.css']
 })
 export class SimpleComponent implements OnInit {
-
+  subject: string = 'world';
   constructor() { }
 
   ngOnInit() {
