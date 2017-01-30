@@ -27,7 +27,6 @@ import {
     ItemsComponent,
     WidgetsComponent,
     AsyncServiceComponent,
-    AsyncGreetingService,
     HostComponent,
     InputOutputComponent,
     RoutedComponent,
