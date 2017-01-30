@@ -11,7 +11,6 @@ import { ItemsComponent } from './items/items.component';
 import { WidgetsComponent } from './widgets/widgets.component';
 import {
   AsyncServiceComponent,
-  HostComponent,
   InputOutputComponent,
   RoutedComponent,
   ServiceComponent,
@@ -27,7 +26,6 @@ import {
     ItemsComponent,
     WidgetsComponent,
     AsyncServiceComponent,
-    HostComponent,
     InputOutputComponent,
     RoutedComponent,
     ServiceComponent,

@@ -1,6 +1,5 @@
 export { AsyncServiceComponent } from './async-service/async-service.component';
 export { AsyncGreetingService } from './async-service/async-greeting.service';
-export { HostComponent } from './host/host.component';
 export { InputOutputComponent } from './input-output/input-output.component';
 export { RoutedComponent } from './routed/routed.component';
 export { ServiceComponent } from './service/service.component';
