@@ -15,6 +15,7 @@ import {
   InputOutputComponent,
   RoutedComponent,
   ServiceComponent,
+  GreetingService,
   SimpleComponent,
   TemplateComponent
 } from './examples';
@@ -38,7 +39,7 @@ import {
     HttpModule,
     Ng2RestAppRoutingModule
   ],
-  providers: [ItemsService, WidgetsService],
+  providers: [ItemsService, WidgetsService, GreetingService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

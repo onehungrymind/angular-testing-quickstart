@@ -1,28 +1,50 @@
 /* tslint:disable:no-unused-variable */
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
 import { ServiceComponent } from './service.component';
+import { GreetingService } from './greeting.service';
 
 describe('ServiceComponent', () => {
   let component: ServiceComponent;
   let fixture: ComponentFixture<ServiceComponent>;
-
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ ServiceComponent ]
-    })
-    .compileComponents();
-  }));
+  let de: DebugElement;
+  let greetingServiceStub;
+  let greetingService;
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ServiceComponent);
+    greetingServiceStub = {
+      subject: {name: 'world'},
+    };
+
+    fixture = TestBed.configureTestingModule({
+      declarations: [ ServiceComponent ],
+      providers: [{ provide: GreetingService, useValue: greetingServiceStub }]
+    })
+    .createComponent(ServiceComponent);
+
     component = fixture.componentInstance;
+    de = fixture.debugElement;
     fixture.detectChanges();
+
+    greetingService = de.injector.get(GreetingService);
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  it('sets the `subject` class member', () => {
+    expect(component.subject.name).toBe('world');
   });
+
+  it('greets the subject', () => {
+    const h1 = de.query(By.css('h1')).nativeElement;
+    expect(h1.innerText).toBe('Hello world!');
+  });
+
+  it('updates component subject when service subject is changed', () => {
+    greetingService.subject.name = 'cosmos';
+    fixture.detectChanges();
+    expect(component.subject.name).toBe('cosmos');
+    const h1 = de.query(By.css('h1')).nativeElement;
+    expect(h1.innerText).toBe('Hello cosmos!');
+  })
 });
