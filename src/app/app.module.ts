@@ -17,7 +17,8 @@ import {
   ServiceComponent,
   GreetingService,
   SimpleComponent,
-  TemplateComponent
+  TemplateComponent,
+  AsyncGreetingService
 } from './examples';
 
 @NgModule({
@@ -26,6 +27,7 @@ import {
     ItemsComponent,
     WidgetsComponent,
     AsyncServiceComponent,
+    AsyncGreetingService,
     HostComponent,
     InputOutputComponent,
     RoutedComponent,
@@ -39,7 +41,7 @@ import {
     HttpModule,
     Ng2RestAppRoutingModule
   ],
-  providers: [ItemsService, WidgetsService, GreetingService],
+  providers: [ItemsService, WidgetsService, GreetingService, AsyncGreetingService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
