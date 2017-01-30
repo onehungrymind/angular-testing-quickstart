@@ -46,5 +46,5 @@ describe('ServiceComponent', () => {
     expect(component.subject.name).toBe('cosmos');
     const h1 = de.query(By.css('h1')).nativeElement;
     expect(h1.innerText).toBe('Hello cosmos!');
-  })
+  });
 });
