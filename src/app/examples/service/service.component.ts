@@ -7,8 +7,5 @@ import { GreetingService } from '../greeting-service/greeting.service';
 export class ServiceComponent implements OnInit {
   subject: {name: string} = this.service.subject;
   constructor(private service: GreetingService) { }
-
-  ngOnInit() {
-  }
-
+  ngOnInit() { }
 }
