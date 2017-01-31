@@ -19,5 +19,4 @@ export class AsyncServiceComponent implements OnInit {
     this.service.getPunctuation()
       .then(res => this.punctuation = res);
   }
-
 }

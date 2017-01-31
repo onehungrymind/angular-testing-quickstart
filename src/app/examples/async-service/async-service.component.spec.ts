@@ -24,7 +24,7 @@ describe('AsyncServiceComponent', () => {
     greetingService = de.injector.get(GreetingService);
   });
 
-  it('doesn\'t initialize `greeting`, `subject`, or `punctuation` on init', () => {
+  it('should ensure `greeting`, `subject`, or `punctuation` are initially undefined', () => {
     fixture.detectChanges();
     expect(component.greeting).toBeUndefined();
     expect(component.subject).toBeUndefined();
@@ -48,11 +48,8 @@ describe('AsyncServiceComponent', () => {
       .and.returnValue(Promise.resolve('universe'));
 
     fixture.detectChanges();
-
     tick();
-
     fixture.detectChanges();
-
     expect(component.subject).toBe('universe');
   }));
 
@@ -61,7 +58,6 @@ describe('AsyncServiceComponent', () => {
       .and.returnValue(Promise.resolve(' :)'));
 
     fixture.detectChanges();
-
     greetingService.getPunctuation().then(() => {
       fixture.detectChanges();
       expect(component.punctuation).toBe(' :)');

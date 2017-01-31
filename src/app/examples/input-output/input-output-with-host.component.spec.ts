@@ -6,7 +6,11 @@ import { DebugElement, Component } from '@angular/core';
 import { InputOutputComponent } from './input-output.component';
 
 @Component({
-  template: `<app-input-output  [subject]="subject"  (leave)="onLeave($event)"></app-input-output>`
+  template: `<app-input-output  
+    [subject]="subject"  
+    (leave)="onLeave($event)">
+  </app-input-output>
+  `
 })
 class TestInputOutputHostComponent {
   subject: string = 'galaxy';
@@ -30,12 +34,11 @@ describe('HostComponent', () => {
     component = fixture.componentInstance;
     de = fixture.debugElement;
     button = de.query(By.css('button'));
-
+    h1 = de.query(By.css('h1'));
     fixture.detectChanges();
   });
 
   it('greets the @Input `subject`', () => {
-    const h1 = de.query(By.css('h1'));
     expect(h1.nativeElement.innerText).toBe('Hello galaxy!');
   });
 
