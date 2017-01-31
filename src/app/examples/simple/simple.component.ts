@@ -2,14 +2,10 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-simple',
-  templateUrl: './simple.component.html',
-  styleUrls: ['./simple.component.css']
+  template: '<h1>Hello {{subject}}!</h1>'
 })
 export class SimpleComponent implements OnInit {
   subject: string = 'world';
   constructor() { }
-
-  ngOnInit() {
-  }
-
+  ngOnInit() { }
 }
