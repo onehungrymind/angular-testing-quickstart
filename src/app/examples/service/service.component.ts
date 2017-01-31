@@ -2,8 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { GreetingService } from '../greeting-service/greeting.service';
 @Component({
   selector: 'app-service',
-  templateUrl: './service.component.html',
-  styleUrls: ['./service.component.css']
+  template: '<h1>Hello {{subject.name}}!</h1>'
 })
 export class ServiceComponent implements OnInit {
   subject: {name: string} = this.service.subject;

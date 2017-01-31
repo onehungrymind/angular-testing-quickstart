@@ -3,8 +3,7 @@ import { GreetingService } from '../greeting-service/greeting.service';
 
 @Component({
   selector: 'app-async-service',
-  templateUrl: './async-service.component.html',
-  styleUrls: ['./async-service.component.css']
+  template: '<h1>{{greeting}} {{subject}}{{punctuation}}</h1>'
 })
 export class AsyncServiceComponent implements OnInit {
   greeting: string;

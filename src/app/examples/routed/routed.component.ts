@@ -3,8 +3,7 @@ import { Router, ActivatedRoute } from "@angular/router";
 
 @Component({
   selector: 'app-routed',
-  templateUrl: './routed.component.html',
-  styleUrls: ['./routed.component.css']
+  template: '<h1>Hello {{subject}}!</h1>'
 })
 export class RoutedComponent implements OnInit{
   subject: string;
