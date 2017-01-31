@@ -3,13 +3,6 @@ import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 
 @Injectable()
 export class ActivatedRouteStub {
-  private subject = new BehaviorSubject(this.testParams);
+  private subject = new BehaviorSubject({subject: 'planet'});
   params = this.subject.asObservable();
-
-  private _testParams: {};
-  get testParams() { return this._testParams; }
-  set testParams(params: {}) {
-    this._testParams = params;
-    this.subject.next(params);
-  }
 }

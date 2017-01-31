@@ -39,7 +39,6 @@ describe('RoutedComponent', () => {
   });
 
   it('sets the `subject` based on route parameters', () => {
-    activatedRoute.testParams = {subject: 'planet'};
     expect(component.subject).toBe('planet');
   });
 
