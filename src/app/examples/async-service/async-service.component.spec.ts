@@ -4,24 +4,24 @@ import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
 import { AsyncServiceComponent } from './async-service.component';
-import { AsyncGreetingService } from './async-greeting.service';
+import { GreetingService } from '../greeting-service/greeting.service';
 
 describe('AsyncServiceComponent', () => {
   let component: AsyncServiceComponent;
   let fixture: ComponentFixture<AsyncServiceComponent>;
   let de: DebugElement;
-  let greetingService: AsyncGreetingService;
+  let greetingService: GreetingService;
 
   beforeEach(() => {
     fixture = TestBed.configureTestingModule({
       declarations: [ AsyncServiceComponent ],
-      providers: [ AsyncGreetingService ]
+      providers: [ GreetingService ]
     })
     .createComponent(AsyncServiceComponent);
 
     component = fixture.componentInstance;
     de = fixture.debugElement.query(By.css('h1'));
-    greetingService = de.injector.get(AsyncGreetingService);
+    greetingService = de.injector.get(GreetingService);
   });
 
   it('doesn\'t initialize greeting, subject, and punctuation on ngOnInit', () => {

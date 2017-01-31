@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { GreetingService } from './greeting.service';
+import { GreetingService } from '../greeting-service/greeting.service';
 @Component({
   selector: 'app-service',
   templateUrl: './service.component.html',

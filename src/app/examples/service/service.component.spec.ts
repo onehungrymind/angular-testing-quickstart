@@ -4,7 +4,7 @@ import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
 import { ServiceComponent } from './service.component';
-import { GreetingService } from './greeting.service';
+import { GreetingService } from '../greeting-service/greeting.service';
 
 describe('ServiceComponent', () => {
   let component: ServiceComponent;
