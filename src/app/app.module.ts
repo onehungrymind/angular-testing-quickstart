@@ -16,7 +16,8 @@ import {
   ServiceComponent,
   GreetingService,
   SimpleComponent,
-  TemplateComponent
+  TemplateComponent,
+  ExclaimPipe
 } from './examples';
 
 @NgModule({
@@ -29,7 +30,8 @@ import {
     RoutedComponent,
     ServiceComponent,
     SimpleComponent,
-    TemplateComponent
+    TemplateComponent,
+    ExclaimPipe
   ],
   imports: [
     BrowserModule,
