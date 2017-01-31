@@ -31,16 +31,16 @@ describe('ServiceComponent', () => {
     greetingService = de.injector.get(GreetingService);
   });
 
-  it('sets the `subject` class member', () => {
+  it('sets the default `subject` to service `subject`', () => {
     expect(component.subject.name).toBe('world');
   });
 
-  it('greets the subject', () => {
+  it('greets the default service `subject`', () => {
     const h1 = de.query(By.css('h1')).nativeElement;
     expect(h1.innerText).toBe('Hello world!');
   });
 
-  it('updates component subject when service subject is changed', () => {
+  it('updates component `subject` when service `subject` is changed', () => {
     greetingService.subject.name = 'cosmos';
     fixture.detectChanges();
     expect(component.subject.name).toBe('cosmos');

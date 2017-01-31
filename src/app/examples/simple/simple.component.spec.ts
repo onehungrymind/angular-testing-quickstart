@@ -21,7 +21,7 @@ describe('SimpleComponent', () => {
     fixture.detectChanges();
   });
 
-  it('sets the `subject` class member', () => {
+  it('sets `subject` to `world` by default', () => {
     expect(component.subject).toBe('world');
   });
 

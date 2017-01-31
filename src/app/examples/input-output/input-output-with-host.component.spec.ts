@@ -34,12 +34,12 @@ describe('HostComponent', () => {
     fixture.detectChanges();
   });
 
-  it('greets the subject', () => {
+  it('greets the @Input `subject`', () => {
     const h1 = de.query(By.css('h1'));
     expect(h1.nativeElement.innerText).toBe('Hello galaxy!');
   });
 
-  it('says goodbye to the subject', () => {
+  it('says goodbye to the `subject`', () => {
     button.triggerEventHandler('click', null);
     expect(component.completeGreeting).toBe('Ciao galaxy!');
   });

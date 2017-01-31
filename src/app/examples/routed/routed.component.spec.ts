@@ -28,16 +28,17 @@ describe('RoutedComponent', () => {
     component = fixture.componentInstance;
     router = fixture.debugElement.injector.get(Router);
     activatedRoute = fixture.debugElement.injector.get(ActivatedRoute);
+
     fixture.detectChanges();
   });
 
-  it('#goToItems navigates to /items', () => {
+  it('#goToItems navigates to `/items`', () => {
     spyOn(router, 'navigateByUrl');
     component.goToItems();
     expect(router.navigateByUrl).toHaveBeenCalledWith('/items');
   });
 
-  it('sets the subject based on route parameters', () => {
+  it('sets the `subject` based on route parameters', () => {
     activatedRoute.testParams = {subject: 'planet'};
     expect(component.subject).toBe('planet');
   });

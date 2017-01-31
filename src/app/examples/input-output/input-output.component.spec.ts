@@ -25,16 +25,16 @@ describe('InputOutputComponent', () => {
     fixture.detectChanges();
   });
 
-  it('has subject as an @Input', () => {
+  it('has `subject` as an @Input', () => {
     expect(component.subject).toBe('galaxy');
   });
 
-  it('greets the subject', () => {
+  it('greets the @Input `subject`', () => {
     const h1 = de.query(By.css('h1'));
     expect(h1.nativeElement.innerText).toBe('Hello galaxy!');
   });
 
-  it('says goodbye to the subject', () => {
+  it('says goodbye to the `subject`', () => {
     let farewell;
     component.leave.subscribe(event => farewell = event);
 

@@ -24,14 +24,14 @@ describe('AsyncServiceComponent', () => {
     greetingService = de.injector.get(GreetingService);
   });
 
-  it('doesn\'t initialize greeting, subject, and punctuation on ngOnInit', () => {
+  it('doesn\'t initialize `greeting`, `subject`, or `punctuation` on init', () => {
     fixture.detectChanges();
     expect(component.greeting).toBeUndefined();
     expect(component.subject).toBeUndefined();
     expect(component.punctuation).toBeUndefined();
   });
 
-  it('gets greeting after promise (async)', async(() => {
+  it('gets `greeting` after promise (async)', async(() => {
     spyOn(greetingService, 'getGreeting')
       .and.returnValue(Promise.resolve('Greetings'));
 
@@ -43,7 +43,7 @@ describe('AsyncServiceComponent', () => {
     });
   }));
 
-  it('gets subject after promise (fakeAsync)', fakeAsync(() => {
+  it('gets `subject` after promise (fakeAsync)', fakeAsync(() => {
     spyOn(greetingService, 'getSubject')
       .and.returnValue(Promise.resolve('universe'));
 
@@ -56,7 +56,7 @@ describe('AsyncServiceComponent', () => {
     expect(component.subject).toBe('universe');
   }));
 
-  it('gets punctuation after promise (done) – use with caution', (done) => {
+  it('gets `punctuation` after promise (done) – use with caution', done => {
     spyOn(greetingService, 'getPunctuation')
       .and.returnValue(Promise.resolve(' :)'));
 

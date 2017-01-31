@@ -3,14 +3,14 @@ import { GreetingService } from './greeting.service';
 describe('GreetingService', () => {
   let service = new GreetingService();
 
-  it('#getGreeting returns a greeting', done => {
+  it('#getGreeting returns a `greeting`', done => {
     service.getGreeting().then((res) => {
       expect(res).toBe('Hello');
       done();
     });
   });
 
-  it('#getSubject returns current subject', done => {
+  it('#getSubject returns current `subject`', done => {
     service.subject = {name: 'infinity'};
     service.getSubject().then((res) => {
       expect(res).toBe('infinity');
@@ -18,7 +18,7 @@ describe('GreetingService', () => {
     });
   });
 
-  it('#getPunctuation returns punctuation', done => {
+  it('#getPunctuation returns `punctuation`', done => {
     service.getPunctuation().then((res) => {
       expect(res).toBe('!');
       done();
