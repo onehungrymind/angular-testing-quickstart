@@ -29,4 +29,11 @@ describe('SimpleComponent', () => {
     const h1 = de.query(By.css('h1'));
     expect(h1.nativeElement.innerText).toBe('Hello world!');
   });
+
+  it('updates the subject', () => {
+    component.subject = 'developer';
+    fixture.detectChanges();
+    const h1 = de.query(By.css('h1'));
+    expect(h1.nativeElement.innerText).toBe('Hello developer!');
+  });
 });
