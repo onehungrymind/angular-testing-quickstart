@@ -6,7 +6,9 @@ import { ActivatedRouteStub } from './activated-route-stub';
 import { RoutedComponent } from './routed.component';
 
 class RouterStub {
-  navigateByUrl(url) { return url; }
+  navigateByUrl(url) {
+    return url;
+  }
 }
 
 describe('RoutedComponent', () => {
@@ -17,13 +19,13 @@ describe('RoutedComponent', () => {
 
   beforeEach(() => {
     fixture = TestBed.configureTestingModule({
-      declarations: [ RoutedComponent ],
+      declarations: [RoutedComponent],
       providers: [
-        { provide: Router, useClass: RouterStub },
-        { provide: ActivatedRoute, useClass: ActivatedRouteStub }
+        {provide: Router, useClass: RouterStub},
+        {provide: ActivatedRoute, useClass: ActivatedRouteStub}
       ]
     })
-    .createComponent(RoutedComponent);
+      .createComponent(RoutedComponent);
 
     component = fixture.componentInstance;
     router = fixture.debugElement.injector.get(Router);
