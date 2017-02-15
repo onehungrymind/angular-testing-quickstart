@@ -1,7 +1,7 @@
 import { GreetingService } from './greeting.service';
 
 describe('GreetingService', () => {
-  let service = new GreetingService();
+  const service = new GreetingService();
 
   it('#getGreeting returns a `greeting`', done => {
     service.getGreeting().then((res) => {
