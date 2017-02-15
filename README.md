@@ -4,7 +4,7 @@
 A collection of testing examples written for Angular using the `angular-cli`.
 
 ## Dependencies
-- You must have `node v >= 4.0` and `npm v >= 3` installed (via `brew install node` or [NodeJS.org](https://nodejs.org/en/));
+- You must have `node v >= 6.0` and `npm v >= 3` installed (via `brew install node` or [NodeJS.org](https://nodejs.org/en/));
 - Install Angular CLI via `npm i -g angular-cli`
 
 ### Getting Started
