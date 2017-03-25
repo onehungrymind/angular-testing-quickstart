@@ -9,6 +9,10 @@ describe('ng2-simple-app App', function() {
 
   it('should display message saying app works', () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('app works!');
+
+    page.getLayoutTitleText()
+      .then((txt) => {
+        expect(txt).toEqual('Angular 2 REST Website');
+      });
   });
 });

@@ -5,7 +5,7 @@ export class Ng2SimpleAppPage {
     return browser.get('/');
   }
 
-  getParagraphText() {
-    return element(by.css('app-root h1')).getText();
-  }
+  getLayoutTitleText() {
+    return element(by.css('.mdl-layout-title')).getText();
+  };
 }
