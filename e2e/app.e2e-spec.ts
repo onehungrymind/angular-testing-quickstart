@@ -7,7 +7,7 @@ describe('ng2-simple-app App', function() {
     page = new Ng2SimpleAppPage();
   });
 
-  it('should display message saying app works', () => {
+  it('should display message saying Angular 2 REST Website', () => {
     page.navigateTo();
 
     page.getLayoutTitleText()
