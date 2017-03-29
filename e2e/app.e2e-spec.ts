@@ -1,10 +1,10 @@
-import { Ng2SimpleAppPage } from './app.po';
+import { AngularTestingExamplesPage } from './app.po';
 
 describe('ng2-simple-app App', function() {
-  let page: Ng2SimpleAppPage;
+  let page: AngularTestingExamplesPage;
 
   beforeEach(() => {
-    page = new Ng2SimpleAppPage();
+    page = new AngularTestingExamplesPage();
   });
 
   it('should display message saying Angular 2 REST Website', () => {
