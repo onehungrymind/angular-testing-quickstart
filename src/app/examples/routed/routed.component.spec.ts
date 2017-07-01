@@ -29,7 +29,7 @@ describe('RoutedComponent', () => {
 
     component = fixture.componentInstance;
     router = fixture.debugElement.injector.get(Router);
-    activatedRoute = fixture.debugElement.injector.get(ActivatedRoute);
+    activatedRoute = fixture.debugElement.injector.get(ActivatedRouteStub);
 
     fixture.detectChanges();
   });
