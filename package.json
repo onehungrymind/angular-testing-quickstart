@@ -29,7 +29,9 @@
   },
   "devDependencies": {
     "@angular/cli": "^1.2.0",
+    "@angular/compiler-cli": "^4.0.0",
     "@types/jasmine": "^2.2.30",
+    "@types/node": "~6.0.60",
     "codelyzer": "~3.1.1",
     "concurrently": "^3.1.0",
     "jasmine-core": "2.6.4",
@@ -42,7 +44,6 @@
     "protractor": "5.1.2",
     "ts-node": "3.1.0",
     "tslint": "5.4.3",
-    "typescript": "2.4.1",
-    "webpack": "^3.0.0"
+    "typescript": "2.4.1"
   }
 }
