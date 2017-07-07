@@ -15,7 +15,7 @@ describe('RoutedComponent', () => {
   let component: RoutedComponent;
   let fixture: ComponentFixture<RoutedComponent>;
   let router: Router;
-  let activatedRoute: ActivatedRouteStub;
+  let activatedRoute: ActivatedRoute;
 
   beforeEach(() => {
     fixture = TestBed.configureTestingModule({
@@ -29,7 +29,7 @@ describe('RoutedComponent', () => {
 
     component = fixture.componentInstance;
     router = fixture.debugElement.injector.get(Router);
-    activatedRoute = fixture.debugElement.injector.get(ActivatedRouteStub);
+    activatedRoute = fixture.debugElement.injector.get(ActivatedRoute);
 
     fixture.detectChanges();
   });
