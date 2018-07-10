@@ -20,7 +20,7 @@ export class WidgetsComponent implements OnInit {
 
   ngOnInit() {
     this.widgetsService.loadWidgets()
-      .subscribe(widgets => this.widgets = widgets);
+      .subscribe((widgets: Widget[]) => this.widgets = widgets);
   }
 
   resetWidget() {
@@ -34,7 +34,7 @@ export class WidgetsComponent implements OnInit {
 
   saveWidget(widget: Widget) {
     this.widgetsService.saveWidget(widget)
-      .subscribe(responseWidget => {
+      .subscribe((responseWidget: Widget) => {
         if (widget.id) {
           this.replaceWidget(responseWidget);
         } else {

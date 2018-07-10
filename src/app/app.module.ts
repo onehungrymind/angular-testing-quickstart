@@ -1,7 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
 import { Ng2RestAppRoutingModule } from './app-routing.module';
 
 import { ItemsService, WidgetsService } from './shared';
@@ -19,6 +18,7 @@ import {
   TemplateComponent,
   ExclaimPipe
 } from './examples';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -36,7 +36,7 @@ import {
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule,
+    HttpClientModule,
     Ng2RestAppRoutingModule
   ],
   providers: [ItemsService, WidgetsService, GreetingService],

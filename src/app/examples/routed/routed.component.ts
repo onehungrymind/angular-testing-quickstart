@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-routed',
@@ -14,8 +15,8 @@ export class RoutedComponent implements OnInit {
 
   ngOnInit() {
     this.route.params
-      .map(p => p && p['subject'])
-      .forEach(subject => this.subject = subject);
+      .pipe(map(p => p && p['subject']))
+      .subscribe(subject => this.subject = subject);
   }
 
   goToItems() {

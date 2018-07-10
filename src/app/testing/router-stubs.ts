@@ -29,7 +29,7 @@ export class RouterStub {
 
 
 // Only implements params and part of snapshot.params
-import { BehaviorSubject } from 'rxjs/BehaviorSubject';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable()
 export class ActivatedRouteStub {

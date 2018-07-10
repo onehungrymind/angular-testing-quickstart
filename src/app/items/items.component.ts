@@ -20,7 +20,7 @@ export class ItemsComponent implements OnInit {
 
   ngOnInit() {
     this.itemsService.loadItems()
-      .subscribe(items => this.items = items);
+      .subscribe((items: Item[]) => this.items = items);
   }
 
   resetItem() {
@@ -34,7 +34,7 @@ export class ItemsComponent implements OnInit {
 
   saveItem(item: Item) {
     this.itemsService.saveItem(item)
-      .subscribe(responseItem => {
+      .subscribe((responseItem: Item) => {
         if (item.id) {
           this.replaceItem(responseItem);
         } else {
