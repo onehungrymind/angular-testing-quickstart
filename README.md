@@ -1,11 +1,11 @@
 ![image](https://cloud.githubusercontent.com/assets/1544557/22271768/912bb056-e253-11e6-81f5-3d6dda384bb8.png)
-# Angular Testing Examples
+# Angular Testing Quickstart
 
-A collection of testing examples written for Angular using the `angular-cli`.
+A collection of testing examples written for Angular using the `@angular/cli`.
 
 ## Dependencies
-- You must have `node v >= 6.0` and `npm v >= 3` installed (via `brew install node` or [NodeJS.org](https://nodejs.org/en/));
-- Install Angular CLI via `npm i -g angular-cli`
+- You must have `node` and `npm` installed (via `brew install node` or [NodeJS.org](https://nodejs.org/en/));
+- Install Angular CLI via `npm i -g @angular/cli`
 
 ### Getting Started
 
@@ -14,8 +14,8 @@ There are two main parts to this application. The first is the REST API, for whi
 To get started run the commands below.
 
 ```bash
-$ git clone https://github.com/onehungrymind/angular-testing-examples.git
-$ cd angular-testing-examples
+$ git clone https://github.com/onehungrymind/angular-testing-quickstart.git
+$ cd angular-testing-quickstart
 $ npm install
 $ npm start
 ```

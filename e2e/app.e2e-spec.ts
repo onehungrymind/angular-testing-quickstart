@@ -1,6 +1,6 @@
 import { AngularTestingExamplesPage } from './app.po';
 
-describe('ng2-simple-app App', function() {
+describe('angular-testing-quickstart App', function() {
   let page: AngularTestingExamplesPage;
 
   beforeEach(() => {
