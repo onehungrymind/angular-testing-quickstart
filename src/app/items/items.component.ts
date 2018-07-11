@@ -24,7 +24,7 @@ export class ItemsComponent implements OnInit {
   }
 
   resetItem() {
-    let emptyItem: Item = {id: null, name: '', description: ''};
+    const emptyItem: Item = {id: null, name: '', description: ''};
     this.selectedItem = emptyItem;
   }
 

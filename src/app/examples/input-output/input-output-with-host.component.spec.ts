@@ -6,14 +6,14 @@ import { DebugElement, Component } from '@angular/core';
 import { InputOutputComponent } from './input-output.component';
 
 @Component({
-  template: `<app-input-output  
-    [subject]="subject"  
+  template: `<app-input-output
+    [subject]="subject"
     (leave)="onLeave($event)">
   </app-input-output>
   `
 })
 class TestInputOutputHostComponent {
-  subject: string = 'galaxy';
+  subject = 'galaxy';
   completeGreeting: string;
   onLeave(greeting: string) { this.completeGreeting = greeting; }
 }

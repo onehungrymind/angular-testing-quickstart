@@ -5,7 +5,7 @@ import { Component, OnInit } from '@angular/core';
   template: '<h1>Hello {{subject}}!</h1>'
 })
 export class SimpleComponent implements OnInit {
-  subject: string = 'world';
+  subject = 'world';
   constructor() { }
   ngOnInit() { }
 }

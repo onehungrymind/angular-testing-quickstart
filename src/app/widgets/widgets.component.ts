@@ -24,7 +24,7 @@ export class WidgetsComponent implements OnInit {
   }
 
   resetWidget() {
-    let emptyWidget: Widget = {id: null};
+    const emptyWidget: Widget = {id: null};
     this.selectedWidget = emptyWidget;
   }
 
