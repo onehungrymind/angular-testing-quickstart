@@ -11,7 +11,7 @@ export class WidgetsComponent implements OnInit {
   originalName: string;
   selectedCopy: Widget = {id: null};
 
-  set selectedWidget(value: Widget){
+  set selectedWidget(value: Widget) {
     if (value) { this.originalName = value.name; }
     this.selectedCopy = Object.assign({}, value);
   }

@@ -11,7 +11,7 @@ export class ItemsComponent implements OnInit {
   originalName: string;
   selectedCopy: Item = {id: null};
 
-  set selectedItem(value: Item){
+  set selectedItem(value: Item) {
     if (value) { this.originalName = value.name; }
     this.selectedCopy = Object.assign({}, value);
   }

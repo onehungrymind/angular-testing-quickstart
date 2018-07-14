@@ -8,8 +8,8 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
   `
 })
 export class InputOutputComponent {
-  @Input('subject') subject: string;
-  @Output('leave') leave: EventEmitter<string> = new EventEmitter();
+  @Input() subject: string;
+  @Output() leave: EventEmitter<string> = new EventEmitter();
   depart() {
     this.leave.emit(`Ciao ${this.subject}!`);
   }
