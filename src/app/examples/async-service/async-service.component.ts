@@ -12,10 +12,22 @@ export class AsyncServiceComponent implements OnInit {
   constructor(private service: GreetingService) { }
 
   ngOnInit() {
+    this.getGreeting();
+    this.getPunctuation();
+    this.getSubject();
+  }
+
+  getGreeting() {
     this.service.getGreeting()
       .then(res => this.greeting = res);
+  }
+
+  getSubject() {
     this.service.getSubject()
       .then(res => this.subject = res);
+  }
+
+  getPunctuation() {
     this.service.getPunctuation()
       .then(res => this.punctuation = res);
   }
