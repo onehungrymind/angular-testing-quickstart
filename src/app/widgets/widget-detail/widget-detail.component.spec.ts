@@ -4,23 +4,29 @@ import { FormsModule } from '@angular/forms';
 import { AppMaterialModule } from '../../app-material.module';
 
 import { WidgetDetailComponent } from './widget-detail.component';
+import { DebugElement } from '@angular/core';
+import { WidgetsListComponent } from '../widgets-list/widgets-list.component';
 
 describe('WidgetDetailComponent', () => {
-  let component: WidgetDetailComponent;
   let fixture: ComponentFixture<WidgetDetailComponent>;
+  let de: DebugElement;
+  let component: WidgetDetailComponent;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ WidgetDetailComponent ],
-      imports: [ FormsModule, BrowserAnimationsModule, AppMaterialModule ]
+      declarations: [WidgetDetailComponent],
+      imports: [FormsModule, BrowserAnimationsModule, AppMaterialModule]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
     fixture = TestBed.createComponent(WidgetDetailComponent);
     component = fixture.componentInstance;
-    component.widget = { id: null, name: '', price: 0, description: ''};
+    de = fixture.debugElement;
+
+    component.widget = {id: 100, name: 'item', description: 'item', price: 100};
+
     fixture.detectChanges();
   });
 
