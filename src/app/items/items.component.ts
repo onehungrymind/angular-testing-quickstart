@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ItemsService, Item } from '../shared';
+import { Item, ItemsService } from '../shared';
 
 @Component({
   selector: 'app-items',
@@ -7,65 +7,62 @@ import { ItemsService, Item } from '../shared';
   styleUrls: ['./items.component.css']
 })
 export class ItemsComponent implements OnInit {
-  items: Array<Item>;
-  originalName: string;
-  selectedCopy: Item = {id: null};
+  items: Item[];
+  currentItem: Item;
 
-  set selectedItem(value: Item) {
-    if (value) { this.originalName = value.name; }
-    this.selectedCopy = Object.assign({}, value);
-  }
-
-  constructor(private itemsService: ItemsService) {}
+  constructor(private itemsService: ItemsService) { }
 
   ngOnInit() {
-    this.itemsService.loadItems()
+    this.getItems();
+    this.resetCurrentItem();
+  }
+
+  resetCurrentItem() {
+    this.currentItem = { id: null, name: '', price: 0, description: '' };
+  }
+
+  selectItem(item) {
+    this.currentItem = item;
+  }
+
+  cancel(item) {
+    this.resetCurrentItem();
+  }
+
+  getItems() {
+    this.itemsService.all()
       .subscribe((items: Item[]) => this.items = items);
   }
 
-  resetItem() {
-    const emptyItem: Item = {id: null, name: '', description: ''};
-    this.selectedItem = emptyItem;
+  saveItem(item) {
+    if (!item.id) {
+      this.createItem(item);
+    } else {
+      this.updateItem(item);
+    }
   }
 
-  selectItem(item: Item) {
-    this.selectedItem = item;
-  }
-
-  saveItem(item: Item) {
-    this.itemsService.saveItem(item)
-      .subscribe((responseItem: Item) => {
-        if (item.id) {
-          this.replaceItem(responseItem);
-        } else {
-          this.pushItem(responseItem);
-        }
+  createItem(item) {
+    this.itemsService.create(item)
+      .subscribe(response => {
+        this.getItems();
+        this.resetCurrentItem();
       });
-
-    // Generally, we would want to wait for the result of `itemsService.saveItem`
-    // before resetting the current item.
-    this.resetItem();
   }
 
-  replaceItem(item: Item) {
-    this.items = this.items.map(mapItem => {
-      return mapItem.id === item.id ? item : mapItem;
-    });
-  }
-
-  pushItem(item: Item) {
-    this.items.push(item);
-  }
-
-  deleteItem(item: Item) {
-    this.itemsService.deleteItem(item)
-      .subscribe(() => {
-        this.items.splice(this.items.indexOf(item), 1);
+  updateItem(item) {
+    this.itemsService.update(item)
+      .subscribe(response => {
+        this.getItems();
+        this.resetCurrentItem();
       });
+  }
 
-    // Generally, we would want to wait for the result of `itemsService.deleteItem`
-    // before resetting the current item.
-    this.resetItem();
+  deleteItem(item) {
+    this.itemsService.delete(item)
+      .subscribe(response => {
+        this.getItems();
+        this.resetCurrentItem();
+      });
   }
 }
-

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { WidgetsService, Widget } from '../shared';
+import { Widget, WidgetsService } from '../shared';
 
 @Component({
   selector: 'app-widgets',
@@ -7,65 +7,38 @@ import { WidgetsService, Widget } from '../shared';
   styleUrls: ['./widgets.component.css']
 })
 export class WidgetsComponent implements OnInit {
-  widgets: Array<Widget>;
-  originalName: string;
-  selectedCopy: Widget = {id: null};
+  currentWidget: Widget;
+  widgets: Widget[];
 
-  set selectedWidget(value: Widget) {
-    if (value) { this.originalName = value.name; }
-    this.selectedCopy = Object.assign({}, value);
-  }
-
-  constructor(private widgetsService: WidgetsService) {}
+  constructor(private widgetsService: WidgetsService) { }
 
   ngOnInit() {
-    this.widgetsService.loadWidgets()
+    this.getWidgets();
+    this.reset();
+  }
+
+  getWidgets() {
+    this.widgetsService.all()
       .subscribe((widgets: Widget[]) => this.widgets = widgets);
   }
 
-  resetWidget() {
-    const emptyWidget: Widget = {id: null};
-    this.selectedWidget = emptyWidget;
+  reset() {
+    this.currentWidget = { id: null, name: '', price: 0, description: ''};
   }
 
-  selectWidget(widget: Widget) {
-    this.selectedWidget = widget;
+  selectWidget(widget) {
+    this.currentWidget = widget;
   }
 
-  saveWidget(widget: Widget) {
-    this.widgetsService.saveWidget(widget)
-      .subscribe((responseWidget: Widget) => {
-        if (widget.id) {
-          this.replaceWidget(responseWidget);
-        } else {
-          this.pushWidget(responseWidget);
-        }
-      });
-
-    // Generally, we would want to wait for the result of `widgetsService.saveWidget`
-    // before resetting the current widget.
-    this.resetWidget();
+  deleteWidget(widget) {
+    console.log('DELETING', widget)
   }
 
-  replaceWidget(widget: Widget) {
-    this.widgets = this.widgets.map(mapWidget => {
-      return mapWidget.id === widget.id ? widget : mapWidget;
-    });
+  saveWidget(widget) {
+    console.log('SAVING', widget);
   }
 
-  pushWidget(widget: Widget) {
-    this.widgets.push(widget);
-  }
-
-  deleteWidget(widget: Widget) {
-    this.widgetsService.deleteWidget(widget)
-      .subscribe(() => {
-        this.widgets.splice(this.widgets.indexOf(widget), 1);
-      });
-
-    // Generally, we would want to wait for the result of `widgetsService.deleteWidget`
-    // before resetting the current widget.
-    this.resetWidget();
+  cancel(widget) {
+    this.reset();
   }
 }
-

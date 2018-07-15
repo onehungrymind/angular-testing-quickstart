@@ -2,35 +2,89 @@
   "items": [
     {
       "id": 1,
-      "name": "Item 1",
-      "description": "This is a description"
+      "name": "Red Item",
+      "price": "100",
+      "description": "This is a red item"
     },
     {
       "id": 2,
-      "name": "Item 2",
-      "description": "This is a description!"
+      "name": "Orange Item edited",
+      "price": 200,
+      "description": "This is an orange item"
     },
     {
       "id": 3,
-      "name": "Item 3",
-      "description": "This is a lovely item"
+      "name": "Yellow Item",
+      "price": 300,
+      "description": "This is a yellow item"
+    },
+    {
+      "id": 4,
+      "name": "Green Item",
+      "price": 400,
+      "description": "This is a green item"
+    },
+    {
+      "id": 5,
+      "price": 500,
+      "name": "Blue Item",
+      "description": "This is a blue item"
+    },
+    {
+      "id": 6,
+      "name": "Indigo Item",
+      "price": 600,
+      "description": "This is a indigo item"
+    },
+    {
+      "id": 7,
+      "name": "Violet Item",
+      "price": 700,
+      "description": "This is a violet item"
     }
   ],
   "widgets": [
     {
       "id": 1,
-      "name": "Widget 1",
-      "description": "This is a description"
+      "name": "Red Widget",
+      "price": 100,
+      "description": "This is a red widget"
     },
     {
       "id": 2,
-      "name": "Widget 2",
-      "description": "This is a description edited!"
+      "name": "Orange Widget",
+      "price": 200,
+      "description": "This is an orange widget"
     },
     {
       "id": 3,
-      "name": "Widget 3",
-      "description": "This is a lovely widget ;)"
+      "name": "Yellow Widget",
+      "price": 300,
+      "description": "This is a yellow widget"
+    },
+    {
+      "id": 4,
+      "name": "Green Widget",
+      "price": 400,
+      "description": "This is a green widget"
+    },
+    {
+      "id": 5,
+      "name": "Blue Widget",
+      "price": 500,
+      "description": "This is a blue widget"
+    },
+    {
+      "id": 6,
+      "name": "Indigo Widget",
+      "price": 600,
+      "description": "This is a indigo widget"
+    },
+    {
+      "id": 7,
+      "name": "Violet Widget",
+      "price": 700,
+      "description": "This is a violet widget"
     }
   ]
 }

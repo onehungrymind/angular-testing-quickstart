@@ -1,6 +1,6 @@
 export interface Widget {
   id: number;
-  img?: string;
-  name?: string;
+  name: string;
+  price: number;
   description?: string;
 }

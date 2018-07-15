@@ -1,5 +1,5 @@
 // export for convenience.
-export { ActivatedRoute, Router, RouterLink, RouterOutlet} from '@angular/router';
+export { ActivatedRoute, Router, RouterLink, RouterOutlet } from '@angular/router';
 
 import { Component, Directive, HostListener, Injectable, Input } from '@angular/core';
 import { NavigationExtras } from '@angular/router';
@@ -17,11 +17,13 @@ export class RouterLinkStubDirective {
 }
 
 @Component({selector: 'router-outlet', template: ''})
-export class RouterOutletStubComponent { }
+export class RouterOutletStubComponent {
+}
 
 @Injectable()
 export class RouterStub {
-  navigate(commands: any[], extras?: NavigationExtras) { }
+  navigate(commands: any[], extras?: NavigationExtras) {
+  }
 }
 
 
@@ -37,7 +39,10 @@ export class ActivatedRouteStub {
 
   // Test parameters
   private _testParams: {};
-  get testParams() { return this._testParams; }
+  get testParams() {
+    return this._testParams;
+  }
+
   set testParams(params: {}) {
     this._testParams = params;
     this.subject.next(params);
@@ -45,6 +50,6 @@ export class ActivatedRouteStub {
 
   // ActivatedRoute.snapshot.params
   get snapshot() {
-    return { params: this.testParams };
+    return {params: this.testParams};
   }
 }

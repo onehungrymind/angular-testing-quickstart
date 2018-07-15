@@ -1,0 +1,20 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>
+      <h1>Widgets</h1>
+    </mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <mat-list>
+      <mat-list-item *ngFor="let widget of widgets" (click)="selected.emit(widget)">
+        <h3 mat-line>{{widget.name}}</h3>
+        <button *ngIf="!readonly" mat-icon-button (click)="deleted.emit(widget);$event.stopImmediatePropagation();">
+          <mat-icon>close</mat-icon>
+        </button>
+        <p mat-line>
+          {{widget.description}}
+        </p>
+      </mat-list-item>
+    </mat-list>
+  </mat-card-content>
+</mat-card>

@@ -6,9 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Angular 2 REST Website';
-  links = {
-    items: ['/items'],
-    widgets: ['/widgets']
-  };
+  title = 'Angular Testing Quickstart';
+  links = [
+    { path: '/home', icon: 'home', label: 'Home'},
+    { path: '/items', icon: 'list', label: 'Items'},
+    { path: '/widgets', icon: 'view_quilt', label: 'Widgets'}
+  ];
 }

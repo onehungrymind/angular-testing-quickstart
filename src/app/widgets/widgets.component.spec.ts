@@ -1,39 +1,48 @@
-/* tslint:disable:no-unused-variable */
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormsModule } from '@angular/forms';
+import { AppMaterialModule } from '../app-material.module';
+import { of } from 'rxjs/internal/observable/of';
 
-import { TestBed, async, ComponentFixture } from '@angular/core/testing';
-import { Router, ActivatedRoute } from '@angular/router';
-
-import { WidgetsComponent } from './widgets.component';
 import { WidgetsService } from '../shared';
-import { RouterOutletStubComponent, RouterStub, ActivatedRouteStub } from '../testing';
+import { WidgetsComponent } from './widgets.component';
+import { WidgetsListComponent } from './widgets-list/widgets-list.component';
+import { WidgetDetailComponent } from './widget-detail/widget-detail.component';
 
-class WidgetsServiceStub {}
+class WidgetsServiceStub {
+  all() { return of([]) }
+}
 
-let comp: WidgetsComponent;
-let fixture: ComponentFixture<WidgetsComponent>;
+describe('WidgetsComponent', () => {
+  let component: WidgetsComponent;
+  let fixture: ComponentFixture<WidgetsComponent>;
 
-describe('Component: Items', () => {
-  beforeEach(() => {
+  beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
-        RouterOutletStubComponent,
-        WidgetsComponent
+        WidgetsComponent,
+        WidgetsListComponent,
+        WidgetDetailComponent
       ],
       providers: [
-        {provide: WidgetsService, useClass: WidgetsServiceStub},
-        {provide: ActivatedRoute, useClass: ActivatedRouteStub},
-        {provide: Router, useClass: RouterStub},
+        {provide: WidgetsService, useClass: WidgetsServiceStub}
+      ],
+      imports: [
+        BrowserAnimationsModule,
+        FormsModule,
+        AppMaterialModule
       ]
-    });
+    })
+    .compileComponents();
+  }));
 
-    fixture = TestBed
-      .overrideComponent(WidgetsComponent, {set: {template: ''}})
-      .createComponent(WidgetsComponent);
-
-    comp = fixture.componentInstance;
+  beforeEach(() => {
+    fixture = TestBed.createComponent(WidgetsComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
   });
 
-  it('should create an instance', () => {
-    expect(comp).toBeTruthy();
+  it('should create', () => {
+    expect(component).toBeTruthy();
   });
 });

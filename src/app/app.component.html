@@ -1,15 +1,25 @@
-<div class="content mdl-layout mdl-js-layout mdl-layout--fixed-header">
-  <header class="mdl-layout__header">
-    <div class="mdl-layout__header-row">
-      <span class="mdl-layout-title">{{title}}</span>
-      <div class="mdl-layout-spacer"></div>
-      <nav class="mdl-navigation">
-        <a class="mdl-navigation__link" [routerLink]="links.items">Items</a>
-        <a class="mdl-navigation__link" [routerLink]="links.widgets">Widgets</a>
-      </nav>
-    </div>
-  </header>
-  <main class="mdl-layout__content page-content">
+<mat-toolbar color="primary">
+  <button (click)="sidenav.toggle()" mat-mini-fab><mat-icon>menu</mat-icon></button>
+  <span class="title">
+    {{title}}
+  </span>
+</mat-toolbar>
+
+<mat-sidenav-container>
+  <mat-sidenav #sidenav mode="side" class="app-sidenav">
+    <nav>
+      <a mat-button
+         class="nav-link"
+         *ngFor="let link of links"
+         [routerLink]="link.path"
+         routerLinkActive="active">
+        <mat-icon>{{link.icon}}</mat-icon>
+        {{link.label}}
+      </a>
+    </nav>
+  </mat-sidenav>
+
+  <div class="app-content">
     <router-outlet></router-outlet>
-  </main>
-</div>
+  </div>
+</mat-sidenav-container>
