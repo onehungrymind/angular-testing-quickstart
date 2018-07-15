@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { UUID } from 'angular2-uuid';
-import { Widget, WidgetsService } from '../../shared';
+import { Widget } from '../../shared';
 
 @Injectable({
   providedIn: 'root'
