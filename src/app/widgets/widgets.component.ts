@@ -14,7 +14,19 @@ export class WidgetsComponent implements OnInit {
 
   ngOnInit() {
     this.getWidgets();
-    this.reset();
+    this.resetCurrentWidget();
+  }
+
+  resetCurrentWidget() {
+    this.currentWidget = { id: null, name: '', price: 0, description: '' };
+  }
+
+  selectWidget(widget) {
+    this.currentWidget = widget;
+  }
+
+  cancel(widget) {
+    this.resetCurrentWidget();
   }
 
   getWidgets() {
@@ -22,23 +34,35 @@ export class WidgetsComponent implements OnInit {
       .subscribe((widgets: Widget[]) => this.widgets = widgets);
   }
 
-  reset() {
-    this.currentWidget = { id: null, name: '', price: 0, description: ''};
+  saveWidget(widget) {
+    if (!widget.id) {
+      this.createWidget(widget);
+    } else {
+      this.updateWidget(widget);
+    }
   }
 
-  selectWidget(widget) {
-    this.currentWidget = widget;
+  createWidget(widget) {
+    this.widgetsService.create(widget)
+      .subscribe(response => {
+        this.getWidgets();
+        this.resetCurrentWidget();
+      });
+  }
+
+  updateWidget(widget) {
+    this.widgetsService.update(widget)
+      .subscribe(response => {
+        this.getWidgets();
+        this.resetCurrentWidget();
+      });
   }
 
   deleteWidget(widget) {
-    console.log('DELETING', widget)
-  }
-
-  saveWidget(widget) {
-    console.log('SAVING', widget);
-  }
-
-  cancel(widget) {
-    this.reset();
+    this.widgetsService.delete(widget)
+      .subscribe(response => {
+        this.getWidgets();
+        this.resetCurrentWidget();
+      });
   }
 }

@@ -1,5 +1,5 @@
 /* tslint:disable:no-unused-variable */
-import { tick, async, fakeAsync, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, fakeAsync, TestBed, tick } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
@@ -14,10 +14,10 @@ describe('AsyncServiceComponent', () => {
 
   beforeEach(() => {
     fixture = TestBed.configureTestingModule({
-      declarations: [ AsyncServiceComponent ],
-      providers: [ GreetingService ]
-    })
-    .createComponent(AsyncServiceComponent);
+        declarations: [AsyncServiceComponent],
+        providers: [GreetingService]
+      })
+      .createComponent(AsyncServiceComponent);
 
     component = fixture.componentInstance;
     de = fixture.debugElement.query(By.css('h1'));
@@ -25,7 +25,6 @@ describe('AsyncServiceComponent', () => {
   });
 
   it('should ensure `greeting`, `subject`, or `punctuation` are initially undefined', () => {
-    fixture.detectChanges();
     expect(component.greeting).toBeUndefined();
     expect(component.subject).toBeUndefined();
     expect(component.punctuation).toBeUndefined();
@@ -37,10 +36,10 @@ describe('AsyncServiceComponent', () => {
 
     fixture.detectChanges();
 
-    fixture.whenStable().then(() => {
-      fixture.detectChanges();
-      expect(component.greeting).toBe('Greetings');
-    });
+    fixture.whenStable()
+      .then(() => {
+        expect(component.greeting).toBe('Greetings');
+      });
   }));
 
   it('gets `subject` after promise (fakeAsync)', fakeAsync(() => {
@@ -49,7 +48,7 @@ describe('AsyncServiceComponent', () => {
 
     fixture.detectChanges();
     tick();
-    fixture.detectChanges();
+
     expect(component.subject).toBe('universe');
   }));
 
@@ -58,10 +57,10 @@ describe('AsyncServiceComponent', () => {
       .and.returnValue(Promise.resolve(' :)'));
 
     fixture.detectChanges();
-    greetingService.getPunctuation().then(() => {
-      fixture.detectChanges();
-      expect(component.punctuation).toBe(' :)');
-      done();
-    });
+    greetingService.getPunctuation()
+      .then(() => {
+        expect(component.punctuation).toBe(' :)');
+        done();
+      });
   });
 });
