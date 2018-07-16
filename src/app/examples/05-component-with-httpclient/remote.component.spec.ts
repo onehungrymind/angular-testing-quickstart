@@ -14,10 +14,7 @@ interface Widget {
 }
 
 class RemoteServiceStub {
-  all() { return of(noop())}
-  create() { return of(noop()) }
-  update() { return of(noop()) }
-  delete() { return of(noop()) }
+  // How would you stub out the RemoteService?
 }
 
 describe('RemoteComponent', () => {
@@ -32,7 +29,7 @@ describe('RemoteComponent', () => {
           RemoteComponent
         ],
         providers: [
-          {provide: RemoteService, useClass: RemoteServiceStub}
+          // How would you use the RemoteServiceStub class?
         ]
       })
       .compileComponents();
@@ -42,12 +39,12 @@ describe('RemoteComponent', () => {
     fixture = TestBed.createComponent(RemoteComponent);
     component = fixture.componentInstance;
     debugElement = fixture.debugElement;
-    service = debugElement.injector.get(RemoteService);
+    // How would you get a reference to a service on a component?
     fixture.detectChanges();
   });
 
   it('should call remoteService.all on getWidgets', () => {
-    spyOn(service, 'all').and.callThrough();
+    // How would you spy on a method on a class?
 
     component.getWidgets();
 
@@ -56,7 +53,7 @@ describe('RemoteComponent', () => {
 
   it('should call remoteService.create on createWidget', () => {
     const mockWidget: Widget = {id: null, name: 'item', description: 'item', price: 100};
-    spyOn(service, 'create').and.callThrough();
+    // How would you spy on a method on a class?
 
     component.createWidget(mockWidget);
 

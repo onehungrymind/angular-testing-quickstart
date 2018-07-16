@@ -13,13 +13,13 @@ describe('ServiceComponent', () => {
   let greetingService;
 
   beforeEach(() => {
-    greetingServiceStub = {
-      subject: {name: 'world'},
-    };
+    // How would you stub out the greeting service?
 
     fixture = TestBed.configureTestingModule({
       declarations: [ ServiceComponent ],
-      providers: [{ provide: GreetingService, useValue: greetingServiceStub }]
+      providers: [
+        // How would you use the value of your stub instead of the real service?
+      ]
     })
     .createComponent(ServiceComponent);
 
@@ -27,7 +27,7 @@ describe('ServiceComponent', () => {
     de = fixture.debugElement;
     fixture.detectChanges();
 
-    greetingService = de.injector.get(GreetingService);
+    // How do you get a reference to the component's service?
   });
 
   it('sets the default `subject` to service `subject`', () => {
@@ -40,8 +40,8 @@ describe('ServiceComponent', () => {
   });
 
   it('updates component `subject` when service `subject` is changed', () => {
-    greetingService.subject.name = 'cosmos';
-    fixture.detectChanges();
+    // How would you set a property on the service?
+    // How would you force change detection?
     expect(component.subject.name).toBe('cosmos');
     const h1 = de.query(By.css('h1')).nativeElement;
     expect(h1.innerText).toBe('Hello cosmos!');

@@ -7,16 +7,14 @@ describe('TemplateComponent', () => {
   let fixture: ComponentFixture<TemplateComponent>;
 
   beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ TemplateComponent ]
-    })
-    .compileComponents();
+    // How do you configure the testing module?
+    // How do you asynchronously compile its contents?
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(TemplateComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
+    // How do you create a component?
+    // How do you get reference to the component?
+    // How do you force change detection?
   });
 
   it('should create', () => {

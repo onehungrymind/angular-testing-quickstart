@@ -13,38 +13,42 @@ export class RefactorService {
   constructor() {
   }
 
-  reCalculateTotal(mode, widgets, newWidget) {
-    this.widgets = this.updateWidgets(mode, widgets, newWidget);
-    this.price = this.getTotalPrice(this.widgets);
+  reCalculateTotal(widget: Widget) {
+    switch (this.mode) {
+      case 'create':
+        const newWidget = Object.assign({}, widget, {id: UUID.UUID()});
+        this.widgets = [...this.widgets, newWidget];
+        break;
+      case 'update':
+        this.widgets = this.widgets.map(wdgt => (widget.id === wdgt.id) ? Object.assign({}, widget) : wdgt);
+        break;
+      case 'delete':
+        this.widgets = this.widgets.filter(wdgt => widget.id !== wdgt.id);
+        break;
+      default:
+        break;
+    }
+
+    this.price = this.widgets.reduce((acc, curr) => acc + curr.price, 0);
   }
 
   updateWidgets(mode, widgets, newWidget) {
-    switch (mode) {
-      case 'create':
-        return this.addWidget(widgets, newWidget);
-      case 'update':
-        return this.updateWidget(widgets, newWidget);
-      case 'delete':
-        return this.deleteWidget(widgets, newWidget);
-      default:
-        return widgets;
-    }
+    // Complete function
   }
 
   addWidget(widgets, widget) {
-    const newWidget = Object.assign({}, widget, {id: UUID.UUID()});
-    return [...widgets, newWidget];
+    // Complete function
   }
 
   updateWidget(widgets, widget) {
-    return widgets.map(wdgt => (widget.id === wdgt.id) ? Object.assign({}, widget) : wdgt);
+    // Complete function
   }
 
   deleteWidget(widgets, widget) {
-    return widgets.filter(wdgt => widget.id !== wdgt.id);
+    // Complete function
   }
 
   getTotalPrice(widgets) {
-    return widgets.reduce((acc, curr) => acc + curr.price, 0);
+    // Complete function
   }
 }

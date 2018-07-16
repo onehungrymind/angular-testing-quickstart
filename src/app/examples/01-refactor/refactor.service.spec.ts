@@ -15,6 +15,12 @@ describe('RefactorService', () => {
     service = injector.get(RefactorService);
   });
 
+  // -------------------------------------------------------------------
+  // CHALLENGE:
+  // These will not pass without refactoring the RefactorService
+  // Update refactor.services.ts so that each test passes one by one
+  // -------------------------------------------------------------------
+  /*
   it('should call updateWidgets and getTotalPrice on reCalculateTotal', () => {
     spyOn(service, 'updateWidgets').and.callThrough();
     spyOn(service, 'getTotalPrice').and.callThrough();
@@ -86,4 +92,5 @@ describe('RefactorService', () => {
 
     expect(total).toBe(600);
   });
+  */
 });

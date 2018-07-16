@@ -21,18 +21,18 @@ describe('SimpleComponent', () => {
   });
 
   it('sets `subject` to `world` by default', () => {
-    expect(component.subject).toBe('world');
+    // How do you get a property on a component under test?
   });
 
   it('greets the subject', () => {
-    const h1 = de.query(By.css('h1'));
-    expect(h1.nativeElement.innerText).toBe('Hello world!');
+    // How do you get the h1 element?
+    // expect(h1.nativeElement.innerText).toBe('Hello world!');
   });
 
   it('updates the subject', () => {
-    component.subject = 'developer';
-    fixture.detectChanges();
-    const h1 = de.query(By.css('h1'));
-    expect(h1.nativeElement.innerText).toBe('Hello developer!');
+    // component.subject = 'developer';
+    // How do you force change detection?
+    // How do you get the h1 element?
+    // expect(h1.nativeElement.innerText).toBe('Hello developer!');
   });
 });

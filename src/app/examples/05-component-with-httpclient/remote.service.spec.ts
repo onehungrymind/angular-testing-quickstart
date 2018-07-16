@@ -28,7 +28,7 @@ describe('RemoteService', () => {
   });
 
   afterEach(() => {
-    httpMock.verify();
+    // How do you verify there are no outstanding requests?
   });
 
   it('should fetch all widgets', () => {
@@ -45,9 +45,10 @@ describe('RemoteService', () => {
         expect(widgets).toEqual(mockWidgets);
       });
 
-    const req = httpMock.expectOne(`${BASE_URL}`);
-    expect(req.request.method).toBe('GET');
-    req.flush(mockWidgets);
+
+    // How do you assert you expect a single call to the service?
+    // How would you assert the request method?
+    // How would you force a payload through the request?
   });
 
   it('should post a new widget', () => {
@@ -56,9 +57,9 @@ describe('RemoteService', () => {
 
     results.subscribe(results => {});
 
-    const req = httpMock.expectOne(`${BASE_URL}`, JSON.stringify(mockWidget));
-    expect(req.request.method).toBe('POST');
-    req.flush(mockWidget);
+    // How do you assert you expect a single call to the service?
+    // How would you assert the request method?
+    // How would you force a payload through the request?
   });
 
   it('should put an existing widget', () => {
@@ -67,9 +68,9 @@ describe('RemoteService', () => {
 
     results.subscribe(results => {});
 
-    const req = httpMock.expectOne(`${BASE_URL}${mockWidget.id}`, JSON.stringify(mockWidget));
-    expect(req.request.method).toBe('PATCH');
-    req.flush(mockWidget);
+    // How do you assert you expect a single call to the service?
+    // How would you assert the request method?
+    // How would you force a payload through the request?
   });
 
   it('should delete an existing widget', () => {
@@ -78,9 +79,9 @@ describe('RemoteService', () => {
 
     results.subscribe(results => {});
 
-    const req = httpMock.expectOne(`${BASE_URL}${mockWidget.id}`);
-    expect(req.request.method).toBe('DELETE');
-    req.flush(mockWidget);
+    // How do you assert you expect a single call to the service?
+    // How would you assert the request method?
+    // How would you force a payload through the request?
   });
 
 });

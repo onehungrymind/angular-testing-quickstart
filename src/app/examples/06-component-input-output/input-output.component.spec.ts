@@ -18,9 +18,9 @@ describe('InputOutputComponent', () => {
 
     component = fixture.componentInstance;
     de = fixture.debugElement;
-    button = de.query(By.css('button'));
+    // How would you get a reference to the button on the component?
 
-    component.subject = 'galaxy';
+    // How would you initialize a component with a property i.e. subject
     fixture.detectChanges();
   });
 
@@ -35,9 +35,9 @@ describe('InputOutputComponent', () => {
 
   it('says goodbye to the `subject`', () => {
     let farewell;
-    component.leave.subscribe(event => farewell = event);
+    // How do you subscribe to an event on a component?
 
-    button.triggerEventHandler('click', null);
+    // How do you trigger an event on a component?
     expect(farewell).toBe('Ciao galaxy!');
   });
 });

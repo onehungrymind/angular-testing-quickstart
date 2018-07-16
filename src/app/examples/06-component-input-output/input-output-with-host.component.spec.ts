@@ -32,7 +32,7 @@ describe('HostComponent', () => {
 
     component = fixture.componentInstance;
     de = fixture.debugElement;
-    button = de.query(By.css('button'));
+    // How would you get a reference to the button of the child component?
     h1 = de.query(By.css('h1'));
     fixture.detectChanges();
   });
@@ -42,7 +42,7 @@ describe('HostComponent', () => {
   });
 
   it('says goodbye to the `subject`', () => {
-    button.triggerEventHandler('click', null);
-    expect(component.completeGreeting).toBe('Ciao galaxy!');
+    // How would you trigger an event on the child component button?
+    // How would you test the result on the parent component?
   });
 });
