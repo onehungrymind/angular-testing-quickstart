@@ -1,7 +1,6 @@
-import { TestBed, inject, getTestBed } from '@angular/core/testing';
+import { getTestBed, TestBed } from '@angular/core/testing';
 import { RefactorService } from './refactor.service';
 import { Widget } from '../../shared/widget.model';
-import { Item } from '../../shared/item.model';
 
 describe('RefactorService', () => {
   let injector: TestBed;
@@ -17,39 +16,38 @@ describe('RefactorService', () => {
   });
 
   // -------------------------------------------------------------------
-  // CHALLENGE
+  // CHALLENGE:
   // These will not pass without refactoring the RefactorService
-  // Refactor the 04-component-with-service and so that each test passes one by one
+  // Update refactor.services.ts so that each test passes one by one
   // -------------------------------------------------------------------
-
   /*
   it('should call updateWidgets and getTotalPrice on reCalculateTotal', () => {
-    spyOn(04-component-with-service, 'updateWidgets').and.callThrough();
-    spyOn(04-component-with-service, 'getTotalPrice').and.callThrough();
+    spyOn(service, 'updateWidgets').and.callThrough();
+    spyOn(service, 'getTotalPrice').and.callThrough();
 
     const mockMode = 'create';
     const mockWidgets = [];
     const mockWidget = {};
 
-    04-component-with-service.reCalculateTotal(mockMode, mockWidgets, mockWidget);
+    service.reCalculateTotal(mockMode, mockWidgets, mockWidget);
 
-    expect(04-component-with-service.updateWidgets).toHaveBeenCalledWith(mockMode, mockWidgets, mockWidget);
-    expect(04-component-with-service.getTotalPrice).toHaveBeenCalled();
+    expect(service.updateWidgets).toHaveBeenCalledWith(mockMode, mockWidgets, mockWidget);
+    expect(service.getTotalPrice).toHaveBeenCalled();
   });
 
   it('should call the appropriate method depending on mode in updateWidgets', () => {
-    spyOn(04-component-with-service, 'addWidget').and.callThrough();
-    spyOn(04-component-with-service, 'updateWidget').and.callThrough();
-    spyOn(04-component-with-service, 'deleteWidget').and.callThrough();
+    spyOn(service, 'addWidget').and.callThrough();
+    spyOn(service, 'updateWidget').and.callThrough();
+    spyOn(service, 'deleteWidget').and.callThrough();
 
-    04-component-with-service.updateWidgets('create', [], {});
-    expect(04-component-with-service.addWidget).toHaveBeenCalledWith([], {});
+    service.updateWidgets('create', [], {});
+    expect(service.addWidget).toHaveBeenCalledWith([], {});
 
-    04-component-with-service.updateWidgets('update', [], {});
-    expect(04-component-with-service.updateWidget).toHaveBeenCalledWith([], {});
+    service.updateWidgets('update', [], {});
+    expect(service.updateWidget).toHaveBeenCalledWith([], {});
 
-    04-component-with-service.updateWidgets('delete', [], {});
-    expect(04-component-with-service.deleteWidget).toHaveBeenCalledWith([], {});
+    service.updateWidgets('delete', [], {});
+    expect(service.deleteWidget).toHaveBeenCalledWith([], {});
   });
 
   it('should add a widget on addWidget', () => {
@@ -58,7 +56,7 @@ describe('RefactorService', () => {
 
     expect(widgets.length).toBe(0);
 
-    widgets = 04-component-with-service.addWidget(widgets, widget);
+    widgets = service.addWidget(widgets, widget);
 
     expect(widgets.length).toBe(1);
   });
@@ -67,7 +65,7 @@ describe('RefactorService', () => {
     let widgets = [{id: 100, name: 'new item', description: 'new item', price: 100}];
     const widget = {id: 100, name: 'UPDATED', description: 'WIDGET', price: 100};
 
-    widgets = 04-component-with-service.updateWidget(widgets, widget);
+    widgets = service.updateWidget(widgets, widget);
 
     expect(widgets[0]).toEqual(widget);
   });
@@ -78,7 +76,7 @@ describe('RefactorService', () => {
 
     expect(widgets.length).toBe(1);
 
-    widgets = 04-component-with-service.deleteWidget(widgets, widget);
+    widgets = service.deleteWidget(widgets, widget);
 
     expect(widgets.length).toBe(0);
   });
@@ -90,7 +88,7 @@ describe('RefactorService', () => {
       {id: 3, name: 'mock', description: 'mock', price: 300}
     ];
 
-    const total = 04-component-with-service.getTotalPrice(widgets);
+    const total = service.getTotalPrice(widgets);
 
     expect(total).toBe(600);
   });

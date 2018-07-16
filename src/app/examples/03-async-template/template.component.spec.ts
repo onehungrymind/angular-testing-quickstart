@@ -1,25 +1,6 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
-import { TemplateComponent } from './template.component';
-
-describe('TemplateComponent', () => {
-  let component: TemplateComponent;
-  let fixture: ComponentFixture<TemplateComponent>;
-
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ TemplateComponent ]
-    })
-    .compileComponents();
-  }));
-
-  beforeEach(() => {
-    fixture = TestBed.createComponent(TemplateComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
-
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
-});
+// -------------------------------------------------------------------
+// CHALLENGE:
+// Locate the template.component.spec.ts file
+// Set up the asynchronous and synchronous beforeEach blocks
+// Test that the component exists
+// -------------------------------------------------------------------

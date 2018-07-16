@@ -1,5 +1,3 @@
-describe('First spec', () => {
-  it('should pass', () => {
-    expect(true).toBeTruthy();
-  });
-});
+// -------------------------------------------------------------------
+// CHALLENGE: write a basic test that fails and then passes
+// -------------------------------------------------------------------
