@@ -13,21 +13,10 @@ import { WidgetDetailComponent } from './widget-detail/widget-detail.component';
 import { DebugElement } from '@angular/core';
 
 class WidgetsServiceStub {
-  all() {
-    return of(noop())
-  }
-
-  create() {
-    return of(noop())
-  }
-
-  update() {
-    return of(noop())
-  }
-
-  delete() {
-    return of(noop())
-  }
+  all() { return of(noop())}
+  create() { return of(noop()) }
+  update() { return of(noop()) }
+  delete() { return of(noop()) }
 }
 
 describe('WidgetsComponent', () => {

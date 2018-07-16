@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { GreetingService } from '../greeting-service/greeting.service';
+import { AsyncService } from './async.service';
 
 @Component({
   selector: 'app-async-service',
@@ -9,7 +9,7 @@ export class AsyncServiceComponent implements OnInit {
   greeting: string;
   subject: string;
   punctuation: string;
-  constructor(private service: GreetingService) { }
+  constructor(private service: AsyncService) { }
 
   ngOnInit() {
     this.getGreeting();
