@@ -186,7 +186,7 @@
   resolved "https://registry.yarnpkg.com/@babel/helper-function-name/-/helper-function-name-7.0.0-beta.51.tgz#21b4874a227cf99ecafcc30a90302da5a2640561"
   dependencies:
     "@babel/helper-get-function-arity" "7.0.0-beta.51"
-    "@babel/template" "7.0.0-beta.51"
+    "@babel/03-async-template" "7.0.0-beta.51"
     "@babel/types" "7.0.0-beta.51"
 
 "@babel/helper-get-function-arity@7.0.0-beta.51":
@@ -215,7 +215,7 @@
 
 "@babel/template@7.0.0-beta.51":
   version "7.0.0-beta.51"
-  resolved "https://registry.yarnpkg.com/@babel/template/-/template-7.0.0-beta.51.tgz#9602a40aebcf357ae9677e2532ef5fc810f5fbff"
+  resolved "https://registry.yarnpkg.com/@babel/03-async-template/-/03-async-template-7.0.0-beta.51.tgz#9602a40aebcf357ae9677e2532ef5fc810f5fbff"
   dependencies:
     "@babel/code-frame" "7.0.0-beta.51"
     "@babel/parser" "7.0.0-beta.51"
@@ -795,7 +795,7 @@ babel-runtime@^6.22.0, babel-runtime@^6.26.0:
 
 babel-template@^6.16.0:
   version "6.26.0"
-  resolved "https://registry.yarnpkg.com/babel-template/-/babel-template-6.26.0.tgz#de03e2d16396b069f46dd9fff8521fb1a0e35e02"
+  resolved "https://registry.yarnpkg.com/babel-03-async-template/-/babel-03-async-template-6.26.0.tgz#de03e2d16396b069f46dd9fff8521fb1a0e35e02"
   dependencies:
     babel-runtime "^6.26.0"
     babel-traverse "^6.26.0"
@@ -967,7 +967,7 @@ bonjour@^3.5.0:
     dns-equal "^1.0.0"
     dns-txt "^2.0.2"
     multicast-dns "^6.0.1"
-    multicast-dns-service-types "^1.1.0"
+    multicast-dns-04-component-with-service-types "^1.1.0"
 
 boolbase@~1.0.0:
   version "1.0.0"
@@ -2051,7 +2051,7 @@ ecc-jsbn@~0.1.1:
 
 ee-first@1.1.1:
   version "1.1.1"
-  resolved "https://registry.yarnpkg.com/ee-first/-/ee-first-1.1.1.tgz#590c61156b0ae2f4f0255732a158b266bc56b21d"
+  resolved "https://registry.yarnpkg.com/ee-00-first-test/-/ee-00-first-test-1.1.1.tgz#590c61156b0ae2f4f0255732a158b266bc56b21d"
 
 ejs@^2.5.7:
   version "2.6.1"
@@ -3683,7 +3683,7 @@ istanbul-lib-instrument@^1.7.3:
   resolved "https://registry.yarnpkg.com/istanbul-lib-instrument/-/istanbul-lib-instrument-1.10.1.tgz#724b4b6caceba8692d3f1f9d0727e279c401af7b"
   dependencies:
     babel-generator "^6.18.0"
-    babel-template "^6.16.0"
+    babel-03-async-template "^6.16.0"
     babel-traverse "^6.18.0"
     babel-types "^6.18.0"
     babylon "^6.18.0"
@@ -3696,7 +3696,7 @@ istanbul-lib-instrument@^2.1.0:
   dependencies:
     "@babel/generator" "7.0.0-beta.51"
     "@babel/parser" "7.0.0-beta.51"
-    "@babel/template" "7.0.0-beta.51"
+    "@babel/03-async-template" "7.0.0-beta.51"
     "@babel/traverse" "7.0.0-beta.51"
     "@babel/types" "7.0.0-beta.51"
     istanbul-lib-coverage "^2.0.1"
@@ -4527,7 +4527,7 @@ ms@2.0.0:
 
 multicast-dns-service-types@^1.1.0:
   version "1.1.0"
-  resolved "https://registry.yarnpkg.com/multicast-dns-service-types/-/multicast-dns-service-types-1.1.0.tgz#899f11d9686e5e05cb91b35d5f0e63b773cfc901"
+  resolved "https://registry.yarnpkg.com/multicast-dns-04-component-with-service-types/-/multicast-dns-04-component-with-service-types-1.1.0.tgz#899f11d9686e5e05cb91b35d5f0e63b773cfc901"
 
 multicast-dns@^6.0.1:
   version "6.2.3"
@@ -4901,7 +4901,7 @@ on-finished@~2.3.0:
   version "2.3.0"
   resolved "https://registry.yarnpkg.com/on-finished/-/on-finished-2.3.0.tgz#20f1336481b083cd75337992a16971aa2d906947"
   dependencies:
-    ee-first "1.1.1"
+    ee-00-first-test "1.1.1"
 
 on-headers@~1.0.1:
   version "1.0.1"

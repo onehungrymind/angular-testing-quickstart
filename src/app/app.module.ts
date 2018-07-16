@@ -25,10 +25,10 @@ import {
   InputOutputComponent,
   RoutedComponent,
   ServiceComponent,
-  GreetingService,
+  IsolatedService,
   SimpleComponent,
   TemplateComponent,
-  ExclaimPipe
+  IsolatedPipe
 } from './examples';
 
 @NgModule({
@@ -48,7 +48,7 @@ import {
     ServiceComponent,
     SimpleComponent,
     TemplateComponent,
-    ExclaimPipe
+    IsolatedPipe
   ],
   imports: [
     BrowserModule,
@@ -58,7 +58,7 @@ import {
     AppRoutingModule,
     AppMaterialModule
   ],
-  providers: [ItemsService, WidgetsService, GreetingService],
+  providers: [ItemsService, WidgetsService, IsolatedService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
