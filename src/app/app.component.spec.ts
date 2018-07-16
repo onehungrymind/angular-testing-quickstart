@@ -9,7 +9,7 @@ import { RouterOutletStubComponent } from './testing';
 
 import { AppComponent } from './app.component';
 
-describe('App: Angular Testing Quickstart', () => {
+describe('AppComponent', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       declarations: [
