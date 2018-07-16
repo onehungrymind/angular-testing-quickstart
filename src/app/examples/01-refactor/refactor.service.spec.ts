@@ -1,7 +1,6 @@
-import { TestBed, inject, getTestBed } from '@angular/core/testing';
+import { getTestBed, TestBed } from '@angular/core/testing';
 import { RefactorService } from './refactor.service';
 import { Widget } from '../../shared/widget.model';
-import { Item } from '../../shared/item.model';
 
 describe('RefactorService', () => {
   let injector: TestBed;
