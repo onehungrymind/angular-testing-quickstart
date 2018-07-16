@@ -1,13 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { Router, ActivatedRoute } from '@angular/router';
-
-import { ActivatedRouteStub } from './activated-route-stub';
+import { ActivatedRoute, Router } from '@angular/router';
 import { RoutedComponent } from './routed.component';
+import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
 
 class RouterStub {
   navigateByUrl(url) {
     return url;
   }
+}
+
+class ActivatedRouteStub {
+  private subject = new BehaviorSubject({subject: 'planet'});
+  params = this.subject.asObservable();
 }
 
 describe('RoutedComponent', () => {
