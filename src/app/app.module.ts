@@ -20,15 +20,18 @@ import { WidgetsComponent } from './widgets/widgets.component';
 import { WidgetDetailComponent } from './widgets/widget-detail/widget-detail.component';
 import { WidgetsListComponent } from './widgets/widgets-list/widgets-list.component';
 
+
+
 import {
-  AsyncServiceComponent,
-  InputOutputComponent,
-  RoutedComponent,
-  ServiceComponent,
-  IsolatedService,
   SimpleComponent,
   TemplateComponent,
-  IsolatedPipe
+  ServiceComponent,
+  RemoteComponent,
+  InputOutputComponent,
+  RoutedComponent,
+  IsolatedPipe,
+  IsolatedService,
+  AsyncServiceComponent
 } from './examples';
 
 @NgModule({
@@ -42,13 +45,15 @@ import {
     WidgetDetailComponent,
     WidgetsListComponent,
     // EXAMPLES
-    AsyncServiceComponent,
-    InputOutputComponent,
-    RoutedComponent,
-    ServiceComponent,
     SimpleComponent,
     TemplateComponent,
-    IsolatedPipe
+    ServiceComponent,
+    RemoteComponent,
+    InputOutputComponent,
+    RoutedComponent,
+    IsolatedPipe,
+    IsolatedService,
+    AsyncServiceComponent
   ],
   imports: [
     BrowserModule,
@@ -61,4 +66,5 @@ import {
   providers: [ItemsService, WidgetsService, IsolatedService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
