@@ -1,4 +1,4 @@
-![image](https://cloud.githubusercontent.com/assets/1544557/22271768/912bb056-e253-11e6-81f5-3d6dda384bb8.png)
+![Angular Testing Quickstart App](README.png)
 # Angular Testing Quickstart
 
 A collection of testing examples written for Angular using the `@angular/cli`.
