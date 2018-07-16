@@ -52,7 +52,6 @@ import {
     InputOutputComponent,
     RoutedComponent,
     IsolatedPipe,
-    IsolatedService,
     AsyncServiceComponent
   ],
   imports: [
